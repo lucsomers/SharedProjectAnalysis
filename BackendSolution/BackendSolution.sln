@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.WebApi", "Contoso.WebApi\Contoso.WebApi.csproj", "{2A868B78-1E3B-4D6F-83EB-B9FA290A9AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Common", "..\SharedSolution\Contoso.Common\Contoso.Common.csproj", "{1ED59BAB-6F08-4655-B7DF-A13D0A9B3697}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A868B78-1E3B-4D6F-83EB-B9FA290A9AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A868B78-1E3B-4D6F-83EB-B9FA290A9AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A868B78-1E3B-4D6F-83EB-B9FA290A9AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A868B78-1E3B-4D6F-83EB-B9FA290A9AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED59BAB-6F08-4655-B7DF-A13D0A9B3697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED59BAB-6F08-4655-B7DF-A13D0A9B3697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED59BAB-6F08-4655-B7DF-A13D0A9B3697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED59BAB-6F08-4655-B7DF-A13D0A9B3697}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

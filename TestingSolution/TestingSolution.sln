@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Common", "..\SharedSolution\Contoso.Common\Contoso.Common.csproj", "{BCC39798-329B-40F7-9589-1BD1F7800C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.WebApi", "..\BackendSolution\Contoso.WebApi\Contoso.WebApi.csproj", "{A7B651C1-E2F6-4191-8976-B0F6804BBE9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Tests", "Contoso.Tests\Contoso.Tests.csproj", "{F871215E-C854-4B97-9B1D-7ECE2EE98625}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCC39798-329B-40F7-9589-1BD1F7800C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC39798-329B-40F7-9589-1BD1F7800C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC39798-329B-40F7-9589-1BD1F7800C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC39798-329B-40F7-9589-1BD1F7800C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B651C1-E2F6-4191-8976-B0F6804BBE9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B651C1-E2F6-4191-8976-B0F6804BBE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B651C1-E2F6-4191-8976-B0F6804BBE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B651C1-E2F6-4191-8976-B0F6804BBE9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F871215E-C854-4B97-9B1D-7ECE2EE98625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F871215E-C854-4B97-9B1D-7ECE2EE98625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F871215E-C854-4B97-9B1D-7ECE2EE98625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F871215E-C854-4B97-9B1D-7ECE2EE98625}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
