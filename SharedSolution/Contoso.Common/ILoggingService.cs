@@ -6,5 +6,5 @@ public interface ILoggingService
     public void LogInformation(string message);
     
     // 0 usages
-    public void GetLogCount();
+    public int GetLogCount();
 }
