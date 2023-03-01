@@ -1,5 +1,7 @@
 ﻿using ExternalReferenceFinder;
 using Microsoft.Build.Construction;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.MSBuild;
 
 internal class Program
 {
@@ -16,6 +18,7 @@ internal class Program
         List<SolutionFileData> solutionFiles = FindAllSolutions(path);
 
 
+        MSBuildWorkspace msWorkspace = MSBuildWorkspace.Create();
 
         //find all projects in solution
         foreach (SolutionFileData solutionFile in solutionFiles)
@@ -24,13 +27,20 @@ internal class Program
 
             Console.WriteLine($"Found solution {solutionFile.GetSolutionName()} Projects in this solution:");
 
-            foreach (ProjectInSolution project in solutionFile.SolutionFile.ProjectsInOrder)
+            Solution solution = msWorkspace.OpenSolutionAsync(solutionFile.SolutionPath).Result;
+
+            foreach (Project project1 in solution.Projects)
             {
-                //find all methods in project
-                //if (project.ProjectName != "Contoso.Common")
-                //    continue;
-                Console.WriteLine($"       {project.ProjectName}");
+                Console.WriteLine(project1.AssemblyName);
             }
+
+            //foreach (ProjectInSolution project in solutionFile.SolutionFile.ProjectsInOrder)
+            //{
+            //    //find all methods in project
+            //    //if (project.ProjectName != "Contoso.Common")
+            //    //    continue;
+            //    Console.WriteLine($"       {project.ProjectName}");
+            //}
 
             Console.WriteLine("------------------");
         }
