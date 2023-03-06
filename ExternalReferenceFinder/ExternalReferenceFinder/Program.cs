@@ -8,49 +8,48 @@ internal class Program
     private static void Main(string[] args)
     {
         FindAllSolutionsBase();
+        FindAllClassFiles();
+    }
+
+    private static void FindAllClassFiles()
+    {
+        string[] solutionPaths = Directory.GetFiles("D:\\GithubRepos\\SharedProjectAnalysis", "*.cs", SearchOption.AllDirectories);
+
+        foreach (string path in solutionPaths)
+        {
+            string[] array = File.ReadAllLines(path);
+
+            Console.WriteLine("--------------------- New file started ---------------------");
+
+            foreach (string s in array)
+            {
+                Console.WriteLine(s);
+            }
+        }
     }
 
     private static void FindAllSolutionsBase()
     {
-        //find all solutions in folder
-        string path = Console.ReadLine();
+        List<SolutionFileData> data = FindAllFilesWithExtension("D:\\GithubRepos\\SharedProjectAnalysis", "*.sln");
 
-        List<SolutionFileData> solutionFiles = FindAllSolutions(path);
-
-
-        MSBuildWorkspace msWorkspace = MSBuildWorkspace.Create();
-
-        //find all projects in solution
-        foreach (SolutionFileData solutionFile in solutionFiles)
+        foreach (SolutionFileData solutionFile in data)
         {
-            Console.WriteLine("------------------");
+            string[] array = File.ReadAllLines(solutionFile.SolutionPath);
 
-            Console.WriteLine($"Found solution {solutionFile.GetSolutionName()} Projects in this solution:");
+            Console.WriteLine("--------------------- New file started ---------------------");
 
-            Solution solution = msWorkspace.OpenSolutionAsync(solutionFile.SolutionPath).Result;
-
-            foreach (Project project1 in solution.Projects)
+            foreach (string s in array)
             {
-                Console.WriteLine(project1.AssemblyName);
+                Console.WriteLine(s);
             }
-
-            //foreach (ProjectInSolution project in solutionFile.SolutionFile.ProjectsInOrder)
-            //{
-            //    //find all methods in project
-            //    //if (project.ProjectName != "Contoso.Common")
-            //    //    continue;
-            //    Console.WriteLine($"       {project.ProjectName}");
-            //}
-
-            Console.WriteLine("------------------");
         }
     }
 
-    public static List<SolutionFileData> FindAllSolutions(string directoryPath)
+    public static List<SolutionFileData> FindAllFilesWithExtension(string directoryPath, string extension)
     {
         List<SolutionFileData> solutionFiles = new List<SolutionFileData>();
 
-        string[] solutionPaths = Directory.GetFiles(directoryPath, "*.sln", SearchOption.AllDirectories);
+        string[] solutionPaths = Directory.GetFiles(directoryPath, extension, SearchOption.AllDirectories);
 
         foreach (string solutionPath in solutionPaths)
         {
