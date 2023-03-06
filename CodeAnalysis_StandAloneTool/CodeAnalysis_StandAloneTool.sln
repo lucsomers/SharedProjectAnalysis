@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalysis_StandAloneTool", "CodeAnalysis_StandAloneTool\CodeAnalysis_StandAloneTool.csproj", "{8BCA6FC8-B84F-4B29-BA47-D83D88158D4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BCA6FC8-B84F-4B29-BA47-D83D88158D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BCA6FC8-B84F-4B29-BA47-D83D88158D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BCA6FC8-B84F-4B29-BA47-D83D88158D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BCA6FC8-B84F-4B29-BA47-D83D88158D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D5C31A1-04CE-44F1-9D74-D1E172A437AC}
+	EndGlobalSection
+EndGlobal
