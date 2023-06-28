@@ -10,15 +10,25 @@ namespace Scripts.PromptShower
         /// Shows a prompt that asks for a valid file path.
         /// </summary>
         /// <returns>the filled in path if it is correct</returns>
-        public static string FillInPathPrompt()
+        public static string FillInClassFilePathPrompt()
         {
-            Console.WriteLine(Prompts.GiveValidPath);
+            return FillInPathPrompt(Prompts.GiveValidPath, Prompts.NotAValidPath);
+        }
+
+        public static string FillInRepositoryPathPrompt()
+        {
+            return FillInPathPrompt(Prompts.GiveValidRepoPath, Prompts.NotValidRepoPath);
+        }
+
+        private static string FillInPathPrompt(string validPathMessage, string NotValidPathMessage)
+        {
+            Console.WriteLine(validPathMessage);
 
             string answer = Console.ReadLine();
 
             while (IsValidPath(answer) == false)
             {
-                Console.WriteLine(Prompts.NotAValidPath);
+                Console.WriteLine(NotValidPathMessage);
 
                 answer = Console.ReadLine();
             }
@@ -31,7 +41,7 @@ namespace Scripts.PromptShower
             if (string.IsNullOrEmpty(answer))
                 return false;
 
-            if (File.Exists(answer))
+            if (File.Exists(answer) || Directory.Exists(answer))
                 return true;
 
             return false;

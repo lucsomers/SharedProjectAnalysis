@@ -14,7 +14,8 @@ namespace CodeAnalysis_StandAloneTool.Scripts
 
             PrintAllMethods(members, methods);
 
-            WriteLine($"Give the number of the method you want to check.");
+            WriteLine();
+            WriteLine($"Give the index number of the method you want to check.");
 
             string answer = ReadLine();
             int selectedIndex = SelectIndexFromMethods(methods, answer);
@@ -35,6 +36,9 @@ namespace CodeAnalysis_StandAloneTool.Scripts
 
         private static void PrintAllMethods(IEnumerable<SyntaxNode> members, List<MethodDeclarationSyntax> methods)
         {
+            WriteLine();
+            WriteLine("Methods in this class file:");
+
             foreach (MemberDeclarationSyntax member in members)
             {
                 MethodDeclarationSyntax method = member as MethodDeclarationSyntax;
@@ -45,6 +49,8 @@ namespace CodeAnalysis_StandAloneTool.Scripts
                     WriteLine($"{methods.Count} - Method: {method.Identifier}");
                 }
             }
+
+            WriteLine();
         }
 
         private static bool AnswerIsValid(string answer, int methodListCount)

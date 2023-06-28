@@ -10,15 +10,24 @@ namespace HelloSyntaxTree
     {
         static void Main(string[] args)
         {
-            string path = PromptShower.FillInPathPrompt();
+            bool keepGoing = true;
 
-            SyntaxTree tree = SyntaxTreeGetter.GetSyntaxTreeFromFile(path);
+            while (keepGoing)
+            {
+                string path = PromptShower.FillInClassFilePathPrompt();
 
-            List<MethodDeclarationSyntax> methods = new List<MethodDeclarationSyntax>();
+                SyntaxTree tree = SyntaxTreeGetter.GetSyntaxTreeFromFile(path);
 
-            int selectedAnswerIndex = MethodSelector.SelectMethod(tree, methods);
+                List<MethodDeclarationSyntax> methods = new List<MethodDeclarationSyntax>();
+
+                int selectedAnswerIndex = MethodSelector.SelectMethod(tree, methods);
 
 
+
+                keepGoing = ProgramRepeater.CheckForRepeat(keepGoing);
+            }
         }
+
+
     }
 }

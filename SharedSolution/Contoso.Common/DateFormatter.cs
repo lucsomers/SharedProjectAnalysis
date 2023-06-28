@@ -1,3 +1,5 @@
+using System;
+
 namespace Contoso.Common;
 
 public class DateFormatter

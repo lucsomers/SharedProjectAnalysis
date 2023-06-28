@@ -21,8 +21,6 @@ namespace CodeAnalysis_StandAloneTool.Scripts
             foreach (UsingDirectiveSyntax element in root.Usings)
                 WriteLine($"\t{element.Name}");
 
-            WriteLine();
-            WriteLine("Methods:");
             return tree;
         }
     }
